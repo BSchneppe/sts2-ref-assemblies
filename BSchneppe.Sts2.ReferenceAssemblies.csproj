@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>0.99.1</Version>
+    <PackageId>BSchneppe.Sts2.ReferenceAssemblies</PackageId>
+    <Authors>BSchneppe</Authors>
+    <Description>Reference-only stubs of Slay the Spire 2 game assemblies for modding CI builds.</Description>
+    <PackageProjectUrl>https://github.com/bschneppe/sts2-ref-assemblies</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bschneppe/sts2-ref-assemblies</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <LicenseExpression>MIT</LicenseExpression>
+    
+    <!-- This is a reference-only package. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    
+    <!-- Package assets in ref/ so they are used for compilation but not runtime. -->
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);GetRefAssets</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <Target Name="GetRefAssets">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="ref\net9.0\*.dll">
+        <PackagePath>ref\net9.0\</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+</Project>
