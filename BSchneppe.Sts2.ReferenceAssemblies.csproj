@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Version>0.110.0-beta-eecc8c4d</Version>
+    <Version>0.111.0-beta-41cef1ea</Version>
     <PackageId>BSchneppe.Sts2.ReferenceAssemblies</PackageId>
     <Authors>BSchneppe</Authors>
     <Description>Reference-only stubs of Slay the Spire 2 game assemblies for modding CI builds.</Description>
